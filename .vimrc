@@ -25,6 +25,8 @@ set scrolloff=2
 
 set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
 
+set nofoldenable
+
 " search
 "-----------------------------------------------------------
 "set incsearch
@@ -71,6 +73,7 @@ set directory=~/.vim/swap
 set viminfo+=n~/.vim/.viminfo
 
 " key map
+"-----------------------------------------------------------
 " move at line
 nnoremap j gj
 nnoremap k gk
@@ -83,6 +86,10 @@ inoremap <Leader>w3cdtf <C-R>=strftime('%Y-%m-%dT%H:%M:%S+09:00')<CR>
 
 " search
 vnoremap * "zy:let @/ = @z<CR>n
+
+" perltidy
+map ,pt <Esc>:%! perltidy<CR>
+map ,ptv <Esc>:'<,'>! perltidy<CR>
 
 " putline
 "-----------------------------------------------------------
