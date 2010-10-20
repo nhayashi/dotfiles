@@ -1,5 +1,11 @@
 set nocompatible
-colorscheme desert
+colorscheme darkblue
+"colorscheme slate
+"colorscheme default
+"colorscheme elflord
+"colorscheme peachpuff
+"set background=dark
+set background=light
 
 " display
 "-----------------------------------------------------------
