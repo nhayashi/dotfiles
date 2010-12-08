@@ -1,12 +1,4 @@
 set nocompatible
-colorscheme darkblue
-"colorscheme slate
-"colorscheme default
-"colorscheme elflord
-"colorscheme peachpuff
-"set background=dark
-set background=light
-
 " display
 "-----------------------------------------------------------
 " Switch syntax highlighting on, when the terminal has colors
@@ -33,6 +25,12 @@ set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ 
 
 set nofoldenable
 
+" colorschema
+"-----------------------------------------------------------
+colorscheme darkblue
+set background=light
+hi Comment ctermfg=darkcyan
+
 " search
 "-----------------------------------------------------------
 "set incsearch
@@ -54,12 +52,12 @@ set formatoptions+=mM
 inoremap <C-d> <Del>
 
 " brackets
-inoremap {} {}<LEFT>
-inoremap [] []<LEFT>
-inoremap () ()<LEFT>
-inoremap "" ""<LEFT>
-inoremap '' ''<LEFT>
-inoremap <> <><LEFT>
+"inoremap {} {}<LEFT>
+"inoremap [] []<LEFT>
+"inoremap () ()<LEFT>
+"inoremap "" ""<LEFT>
+"inoremap '' ''<LEFT>
+"inoremap <> <><LEFT>
 
 " tab
 "-----------------------------------------------------------
@@ -88,7 +86,8 @@ nnoremap k gk
 inoremap <Leader>date <C-R>=strftime('%A, %B %d, %Y')<CR>
 inoremap <Leader>time <C-R>=strftime('%H:%M')<CR>
 inoremap <Leader>rdate <C-R>=strftime('%A, %B %d, %Y %H:%M')<CR>
-inoremap <Leader>w3cdtf <C-R>=strftime('%Y-%m-%dT%H:%M:%S+09:00')<CR>
+"inoremap <Leader>w3cdtf <C-R>=strftime('%Y-%m-%dT%H:%M:%S+09:00')<CR>
+inoremap <Leader>w3 <C-R>=strftime('%Y-%m-%dT%H:%M:%S+09:00')<CR>
 
 " search
 vnoremap * "zy:let @/ = @z<CR>n
@@ -96,6 +95,17 @@ vnoremap * "zy:let @/ = @z<CR>n
 " perltidy
 map ,pt <Esc>:%! perltidy<CR>
 map ,ptv <Esc>:'<,'>! perltidy<CR>
+
+" indent
+map ,id <Esc>:%! indent<CR>
+map ,idv <Esc>:'<,'>! indent<CR>
+
+" bcpp
+"map ,bc <Esc>:%! bcpp 2> /dev/null<CR>
+"map ,bcv <Esc>: <,'>! bcpp 2> /dev/null<CR>
+
+" ctags
+map <C-c><C-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " putline
 "-----------------------------------------------------------
