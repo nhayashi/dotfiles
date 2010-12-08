@@ -30,6 +30,7 @@ set nofoldenable
 colorscheme darkblue
 set background=light
 hi Comment ctermfg=darkcyan
+hi PmenuSel ctermbg=blue
 
 " search
 "-----------------------------------------------------------
