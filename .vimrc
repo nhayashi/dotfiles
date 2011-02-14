@@ -67,7 +67,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set smarttab
-inoremap <C-Tab> <C-V><Tab>
+"inoremap <C-Tab> <C-V><Tab>
 
 " backup
 "-----------------------------------------------------------
@@ -106,7 +106,7 @@ map ,idv <Esc>:'<,'>! indent<CR>
 "map ,bcv <Esc>: <,'>! bcpp 2> /dev/null<CR>
 
 " ctags
-map <C-c><C-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"map <C-c><C-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " putline
 "-----------------------------------------------------------
@@ -169,6 +169,15 @@ if has("autocmd")
   " perl filetype
   autocmd BufNewFile,BufRead *.t setf perl
   autocmd BufNewFile,BufRead *.psgi setf perl
+
+  " load omnifunc
+  if exists("+omnifunc")
+    autocmd FileType *
+      \ if &l:omnifunc == '' |
+      \   setlocal omnifunc=syntaxcomplete#Complete |
+      \ endif
+  endif
+  let g:SuperTabDefaultCompletionType = "context"
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
