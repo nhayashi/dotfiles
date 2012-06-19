@@ -15,11 +15,11 @@ set listchars=tab:>-,trail:-,extends:>,precedes:<
 set display=uhex
 
 set laststatus=2
-set cmdheight=2
+"set cmdheight=2
 set showcmd
 set title
 
-set scrolloff=2
+"set scrolloff=2
 
 set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
 
@@ -65,7 +65,7 @@ inoremap <C-d> <Del>
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+"set expandtab
 set smarttab
 "inoremap <C-Tab> <C-V><Tab>
 
