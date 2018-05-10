@@ -1,0 +1,53 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+    set helplang=ja,en
+'''
+
+#[[plugins]]
+#repo = 'w0ng/vim-hybrid'
+#hook_add = '''
+#    syntax enable
+#    set background=dark
+#    au MyAutoCmd VimEnter * nested colorscheme hybrid
+#'''
+
+#[[plugins]]
+#repo = 'altercation/vim-colors-solarized'
+#hook_add = '''
+#    syntax enable
+#    set background=dark
+#    au MyAutoCmd VimEnter * nested colorscheme solarized
+#'''
+
+[[plugins]]
+repo = 'junegunn/seoul256.vim'
+hook_add = '''
+    syntax enable
+    set background=dark
+    let g:seoul256_background = 236
+    au MyAutoCmd VimEnter * nested colorscheme seoul256
+'''
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {'colorscheme': 'wombat'}
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'nixprime/cpsm'
+build = 'sh -c "PY3=ON ./install.sh"'
+
+[[plugins]]
+repo = 'chemzqm/denite-git'
