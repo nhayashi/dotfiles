@@ -110,9 +110,11 @@ hook_add = '''
     "    \ :<C-u>Denite -auto-resize -highlight-mode-insert=WildMenu
     "    \ command command_history<CR>
     nnoremap <silent> <Leader><Leader>
-    \ :<C-u>Denite -auto-resize -highlight-mode-insert=WildMenu buffer<CR>
+    "\ :<C-u>Denite -auto-resize -highlight-mode-insert=WildMenu buffer<CR>
+    \ :<C-u>Denite -auto-resize -mode=normal buffer<CR>
     nnoremap <silent> <Leader>u
-    \ :<C-u>Denite -auto-resize -highlight-mode-insert=WildMenu file_mru<CR>
+    "\ :<C-u>Denite -auto-resize -highlight-mode-insert=WildMenu file_mru<CR>
+    \ :<C-u>Denite -auto-resize -mode=normal file_mru<CR>
 '''
 hook_source = '''
     if executable('rg')
@@ -204,6 +206,8 @@ hook_source = '''
         \ '\.egg-info$',
         \ '\.pyc$'
     \ ]
+    autocmd MyAutoCmd FileType vimfiler setlocal nonumber
+    autocmd MyAutoCmd FileType vimfiler setlocal norelativenumber
     autocmd MyAutoCmd FileType vimfiler
     \ nmap <buffer> <C-l> <Plug>(vimfiler_switch_to_other_window)
 '''

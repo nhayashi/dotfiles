@@ -1,7 +1,13 @@
-" reset augroup
+scriptencoding utf-8
+" augroup がセットされていない autocmd 全般用の a+ugroup
+" これをやっておかないと ReloadVimrc したときに困る．by Linda_pp
 augroup MyAutoCmd
     autocmd!
 augroup END
+
+"-----------------------------------------------------------------------------
+" Options
+"
 
 filetype plugin indent on
 
@@ -30,6 +36,9 @@ set noundofile
 "set showmatch
 "set matchtime=1
 set matchpairs& matchpairs+=<:>
+
+set number
+set ruler
 
 set list
 "set listchars=tab:>-,trail:-,eol:$,extends:>,precedes:<,nbsp:%
@@ -61,7 +70,7 @@ inoremap <silent> <C-j> j
 "inoremap <C-s> <Esc>:w<CR>
 "inoremap <C-q> <Esc>:q<CR>
 
-" Esc->Escで検索結果とエラーハイライトをクリア
+" Escで検索結果とエラーハイライトをクリア
 nnoremap <silent><Esc> :<C-u>nohlsearch<CR>
 
 " 空行挿入
@@ -141,6 +150,17 @@ autocmd InsertLeave * set nopaste
 " ファイルを開いた時に，カーソル位置を最後にカーソルがあった位置まで移動
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" 一定時間カーソルを移動しないとカーソルラインを表示
+" （ただし，ウィンドウ移動時はなぜか切り替わらない）
+" http://d.hatena.ne.jp/thinca/20090530/1243615055
+augroup AutoCursorLine
+  autocmd!
+  autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
+  autocmd CursorHold,CursorHoldI,WinEnter * setlocal cursorline
+augroup END
+
+" nvim settings-----------------------------
+
 let g:python_host_prog = expand('$HOME/.anyenv/envs/pyenv/versions/neovim2/bin/python')
 let g:python3_host_prog = expand('$HOME/.anyenv/envs/pyenv/versions/neovim3/bin/python')
 
@@ -148,7 +168,7 @@ let $CONFIG = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HO
 let $CACHE = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_HOME
 let $DATA = empty($XDG_DATA_HOME) ? expand('$HOME/.local/share') : $XDG_DATA_HOME
 
-" {{{ dein
+"dein Scripts-----------------------------
 if &compatible
   set nocompatible " Be iMproved
 endif
@@ -183,4 +203,4 @@ endif
 if has('vim_starting') && dein#check_install()
     call dein#install()
 endif
-" }}}
+"End dein Scripts-------------------------
