@@ -2,52 +2,136 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'vim-jp/vimdoc-ja'
+repo     = 'Shougo/vimfiler'
 hook_add = '''
-    set helplang=ja,en
-'''
-
-#[[plugins]]
-#repo = 'w0ng/vim-hybrid'
-#hook_add = '''
-#    syntax enable
-#    set background=dark
-#    au MyAutoCmd VimEnter * nested colorscheme hybrid
-#'''
-
-#[[plugins]]
-#repo = 'altercation/vim-colors-solarized'
-#hook_add = '''
-#    syntax enable
-#    set background=dark
-#    au MyAutoCmd VimEnter * nested colorscheme solarized
-#'''
-
-[[plugins]]
-repo = 'junegunn/seoul256.vim'
-hook_add = '''
-    syntax enable
-    set background=dark
-    let g:seoul256_background = 236
-    au MyAutoCmd VimEnter * nested colorscheme seoul256
+let g:vimfiler_safe_mode_by_default = 0
+let g:vimfiler_ignore_pattern = [
+  \ '^\.DS_Store$',
+  \ '^__pycache__$',
+  \ '\.egg-info$',
+  \ '\.pyc$'
+  \ ]
+autocmd FileType vimfiler setlocal nonumber
+nnoremap <silent> ,vf :<C-u>VimFilerExplorer<CR>
 '''
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
+repo     = 'Shougo/unite.vim'
 hook_add = '''
-    let g:lightline = {'colorscheme': 'wombat'}
-'''
+let g:unite_prompt = '> '
+" insertモードをデフォルトにしない
+let g:unite_enable_start_insert = 0
+let g:unite_source_history_yank_enable =1
+" 無指定にすることで高速化
+let g:unite_source_file_mru_filename_format = ''
+" most recently used のリストサイズ
+let g:unite_source_file_mru_limit = 100
+" Unite起動時のウィンドウ分割
+let g:unite_split_rule = 'rightbelow'
+" 使わないデフォルト Unite ソースをロードしない
+let g:loaded_unite_source_bookmark = 1
+let g:loaded_unite_source_window = 1
 
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+
+nnoremap  [unite]  <Nop>
+nmap      <Space>u [unite]
+'''
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
 
 [[plugins]]
-repo = 'nixprime/cpsm'
-build = 'sh -c "PY3=ON ./install.sh"'
+repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
-repo = 'chemzqm/denite-git'
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/vimshell'
+rev  = '3787e5'
+
+[[plugins]]
+repo     = 'Shougo/deoplete.nvim'
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo     = 'majutsushi/tagbar'
+hook_add = '''
+nmap <F8> :TagbarToggle<CR>
+'''
+
+[[plugins]]
+repo     = 'junegunn/vim-easy-align'
+on_map   = ['<Plug>(EasyAlign)']
+hook_add = '''
+vmap <Enter> <Plug>(EasyAlign)
+'''
+
+[[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+#[[plugins]]
+#repo = 'earendel'
+
+#[[plugins]]
+#repo = 'rdark'
+
+#[[plugins]]
+#repo = 'guicolorscheme.vim'
+
+[[plugins]]
+repo = 'rhysd/wallaby.vim'
+
+[[plugins]]
+repo     = 'junegunn/seoul256.vim'
+hook_add = '''
+let g:seoul256_background = 236
+au MyAutoCmd VimEnter * nested colorscheme seoul256
+'''
+
+[[plugins]]
+repo = 'jnurmine/Zenburn'
+
+#[[plugins]]
+#repo = 'vim-scripts/Lucius'
+
+[[plugins]]
+repo = 'croaker/mustang-vim'
+
+[[plugins]]
+repo     = 'jeffreyiacono/vim-colors-wombat'
+hook_add = '''
+let g:lightline = {
+  \ 'colorscheme': 'wombat'
+  \ }
+'''
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
+repo = 'mrkn/mrkn256.vim'
+
+[[plugins]]
+repo = 'therubymug/vim-pyte'
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+
