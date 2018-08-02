@@ -5,44 +5,65 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+" TODO: .vimrc を読み込んでいる時点でもう要らないと思われる
+if &compatible
+  set nocompatible
+endif
+
 let g:python_host_prog = expand('$HOME/.anyenv/envs/pyenv/versions/neovim2/bin/python')
 let g:python3_host_prog = expand('$HOME/.anyenv/envs/pyenv/versions/neovim3/bin/python')
 
+""plug Scripts-----------------------------
+"
+"let s:plug_dir = expand('$HOME/.local/share/nvim/site/autoload/plug.vim')
+"
+"if &runtimepath !~# '/plug.vim'
+"  " Auto Download
+"  if !isdirectory(s:plug_dir)
+"      call system('git clone https://github.com/junegunn/vim-plug.git ' . shellescape(s:plug_dir))
+"  endif
+"
+"  execute 'set runtimepath^=' . s:plug_dir
+"endif
+"
+"call plug#begin(s:plug_dir)
+"call plug#end()
+"
+""End plug Scripts-------------------------
+
+
 "dein Scripts-----------------------------
 
-if &compatible
-  set nocompatible               " Be iMproved
-endif
 let s:dein_dir = expand('$HOME/.cache/dein')
 
 if &runtimepath !~# '/dein.vim'
-    let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-    " Auto Download
-    if !isdirectory(s:dein_repo_dir)
-        call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
-    endif
+  " Auto Download
+  if !isdirectory(s:dein_repo_dir)
+      call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+  endif
 
-    execute 'set runtimepath^=' . s:dein_repo_dir
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
 
 " dein.vim settings
 
 if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-    let s:toml_dir = expand('$HOME/.config/dein')
+  let s:toml_dir = expand('$HOME/.config/dein')
 
-    call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-    call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+  call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
 
-    call dein#end()
-    call dein#save_state()
+  call dein#end()
+  call dein#save_state()
 endif
 
 if has('vim_starting') && dein#check_install()
-    call dein#install()
+  call dein#install()
 endif
 
 "End dein Scripts-------------------------
@@ -230,6 +251,10 @@ nnoremap <silent><Esc> :<C-u>nohlsearch<CR>
 
 " 空行挿入
 nnoremap ; :<C-u>call append(expand('.'), '')<CR>
+
+"x キー削除でデフォルトレジスタに入れない
+nnoremap x "_x
+vnoremap x "_x
 
 " CTRL-hjklでウィンドウ移動
 nnoremap <C-j> <C-w>j
