@@ -113,6 +113,11 @@ set wrapscan
 set incsearch
 " 検索にマッチしたすべてのテキストをハイライトさせる
 set hlsearch
+" \ の前置きが不要な very magic を使う
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 " コマンドライン補完するときに強化されたものを使う(参照 :help wildmenu)
 set nowildmenu
 set wildmode=list,full
