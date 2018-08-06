@@ -251,12 +251,6 @@ inoremap <C-w><C-w> <Esc>:w<Insert><CR>
 inoremap <C-s> <Esc>:w<CR>
 inoremap <C-q> <Esc>:q<CR>
 
-"Escで検索結果とエラーハイライトをクリア
-nnoremap <silent><Esc> :<C-u>nohlsearch<CR>
-
-" 空行挿入
-nnoremap ; :<C-u>call append(expand('.'), '')<CR>
-
 " x キー削除でデフォルトレジスタに入れない
 nnoremap x "_x
 vnoremap x "_x
@@ -271,6 +265,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
+" 選択範囲を連続でインデントする
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
 " 検索後画面の中心に移動
 nnoremap n nzvzz
 nnoremap N Nzvzz
@@ -280,6 +279,12 @@ nnoremap # *zvzz
 "バッファ切り替え
 nnoremap <silent><C-n>   :<C-u>bnext<CR>
 nnoremap <silent><C-p>   :<C-u>bprevious<CR>
+
+"Escで検索結果とエラーハイライトをクリア
+nnoremap <silent><Esc> :<C-u>nohlsearch<CR>
+
+" 空行挿入
+nnoremap ; :<C-u>call append(expand('.'), '')<CR>
 
 "-----------------------------------------------------------------------------
 " FileType
