@@ -257,9 +257,13 @@ nnoremap <silent><Esc> :<C-u>nohlsearch<CR>
 " 空行挿入
 nnoremap ; :<C-u>call append(expand('.'), '')<CR>
 
-"x キー削除でデフォルトレジスタに入れない
+" x キー削除でデフォルトレジスタに入れない
 nnoremap x "_x
 vnoremap x "_x
+
+" 表示行に沿って移動
+nnoremap j gj
+nnoremap k gk
 
 " CTRL-hjklでウィンドウ移動
 nnoremap <C-j> <C-w>j
