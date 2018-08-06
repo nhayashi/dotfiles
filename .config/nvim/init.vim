@@ -234,6 +234,9 @@ endfunction
 " Keymap
 "
 
+" Nobody ever uses "Ex" mode, and it's annoying to leave
+noremap Q <nop>
+
 " :w1 と打ってしまうくせ防止
 cabbrev q1 q!
 cabbrev w1 w!
