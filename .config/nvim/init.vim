@@ -195,7 +195,7 @@ command! ReloadVimrc source $MYVIMRC
 
 " カーソル位置の復元
 autocmd MyAutoCmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
 
