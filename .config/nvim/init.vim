@@ -158,6 +158,8 @@ set ambiwidth=double
 " 勝手に作られる系のファイルを一箇所にまとめる
 "set directory=~/.vim/swp
 "set undodir=~/.vim/undo
+" クリップボードにコピー
+set clipboard+=unnamed
 
 "-----------------------------------------------------------------------------
 " Util
