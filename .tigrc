@@ -1,2 +1,4 @@
+source ~/.tigrc.vim
+
 bind status C !git commit -v
 bind tree   D ?git rm %(file)
