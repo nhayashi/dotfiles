@@ -159,7 +159,7 @@ set ambiwidth=double
 "set directory=~/.vim/swp
 "set undodir=~/.vim/undo
 " クリップボードにコピー
-set clipboard+=unnamed
+"set clipboard+=unnamed
 
 "-----------------------------------------------------------------------------
 " Util
