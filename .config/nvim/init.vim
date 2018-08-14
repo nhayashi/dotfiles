@@ -160,6 +160,8 @@ set ambiwidth=double
 "set undodir=~/.vim/undo
 " クリップボードにコピー
 "set clipboard+=unnamed
+" Use true color
+set termguicolors
 
 "-----------------------------------------------------------------------------
 " Util

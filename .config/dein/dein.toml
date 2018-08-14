@@ -85,43 +85,41 @@ repo = 'tomasr/molokai'
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-
-#[[plugins]]
-#repo = 'earendel'
-
-#[[plugins]]
-#repo = 'rdark'
-
-#[[plugins]]
-#repo = 'guicolorscheme.vim'
-
-[[plugins]]
-repo = 'rhysd/wallaby.vim'
-
-[[plugins]]
-repo     = 'junegunn/seoul256.vim'
+repo = 'jonathanfilip/vim-lucius'
 hook_add = '''
-let g:seoul256_background = 236
-au MyAutoCmd VimEnter * nested colorscheme seoul256
+au MyAutoCmd VimEnter * nested colorscheme lucius
+let g:lucius_style = 'dark'
+let g:lucius_contrast = 'low'
+let g:lucius_contract_bg = 'normal'
 '''
+
+[[plugins]]
+repo = 'jeffreyiacono/vim-colors-wombat'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {'colorscheme': 'wombat'}
+'''
+
+#[[plugins]]
+#repo = 'rhysd/wallaby.vim'
+#hook_add = '''
+#au MyAutoCmd VimEnter * nested colorscheme wallaby
+#'''
+
+#[[plugins]]
+#repo     = 'junegunn/seoul256.vim'
+#hook_add = '''
+#let g:seoul256_background = 235
+#au MyAutoCmd VimEnter * nested colorscheme seoul256
+#'''
 
 [[plugins]]
 repo = 'jnurmine/Zenburn'
 
-#[[plugins]]
-#repo = 'vim-scripts/Lucius'
-
 [[plugins]]
 repo = 'croaker/mustang-vim'
-
-[[plugins]]
-repo     = 'jeffreyiacono/vim-colors-wombat'
-hook_add = '''
-let g:lightline = {
-  \ 'colorscheme': 'wombat'
-  \ }
-'''
 
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
