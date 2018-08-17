@@ -58,3 +58,18 @@ on_ft = ['toml']
 [[plugins]]
 repo = 'chase/vim-ansible-yaml'
 on_ft = ['yaml']
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown', 'rst', 'mkd']
+hook_add = '''
+let g:vim_markdown_folding_disabled = 1
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'previm/previm'
+on_cmd = 'PrevimOpen'
+depends = 'open-browser.vim'
