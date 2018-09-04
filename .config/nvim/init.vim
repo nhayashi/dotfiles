@@ -283,15 +283,16 @@ nnoremap N Nzvzz
 nnoremap * *zvzz
 nnoremap # *zvzz
 
-"バッファ切り替え
+" バッファ切り替え
 nnoremap <silent><C-n>   :<C-u>bnext<CR>
 nnoremap <silent><C-p>   :<C-u>bprevious<CR>
 
-"Escで検索結果とエラーハイライトをクリア
+" Escで検索結果とエラーハイライトをクリア
 nnoremap <silent><Esc> :<C-u>nohlsearch<CR>
 
 " 空行挿入
-nnoremap ; :<C-u>call append(expand('.'), '')<CR>
+"nnoremap ; :<C-u>call append(expand('.'), '')<CR>
+nnoremap ; o<ESC>k
 
 "-----------------------------------------------------------------------------
 " FileType
@@ -304,9 +305,9 @@ set tabstop=2 shiftwidth=2 softtabstop=0
 " ペースト時にインデントoffにするためのキー設定
 set pastetoggle=<C-E>
 
-"ファイルタイプの検索を有効にする
+" ファイルタイプの検索を有効にする
 filetype plugin on
-"そのファイルタイプにあわせたインデントを利用する
+" そのファイルタイプにあわせたインデントを利用する
 filetype indent on
 
 augroup FileTypeDetect
