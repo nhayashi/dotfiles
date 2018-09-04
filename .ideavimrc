@@ -1,0 +1,6 @@
+" x キー削除でデフォルトレジスタに入れない
+nnoremap x "_x
+vnoremap x "_x
+
+" 空行挿入
+nnoremap ; o<ESC>k
