@@ -43,6 +43,10 @@ repo = 'fatih/vim-go'
 on_ft = 'go'
 
 [[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = 'javascript'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
