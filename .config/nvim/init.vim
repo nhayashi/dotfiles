@@ -331,6 +331,7 @@ augroup FileTypeDetect
   autocmd BufNewFile,BufRead *.coffee setf coffee
   autocmd BufNewFile,BufRead *.erb set filetype=eruby.html
   autocmd BufNewFile,BufRead *.rs set filetype=rust
+  autocmd BufRead,BufNewFile *.ts set filetype=typescript
 augroup END
 
 augroup IndentGroup

@@ -47,6 +47,10 @@ repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
 [[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
