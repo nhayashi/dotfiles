@@ -10,8 +10,8 @@ if &compatible
   set nocompatible
 endif
 
-let g:python_host_prog = expand('$HOME/.anyenv/envs/pyenv/versions/neovim2/bin/python')
-let g:python3_host_prog = expand('$HOME/.anyenv/envs/pyenv/versions/neovim3/bin/python')
+let g:python_host_prog = expand('$HOME/miniconda3/envs/neovim2/bin/python')
+let g:python3_host_prog = expand('$HOME/miniconda3/envs/neovim3/bin/python')
 
 ""plug Scripts-----------------------------
 "
