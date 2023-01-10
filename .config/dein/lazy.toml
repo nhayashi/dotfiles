@@ -68,13 +68,13 @@ on_ft = ['toml']
 repo = 'chase/vim-ansible-yaml'
 on_ft = ['yaml']
 
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-on_ft = ['markdown', 'rst', 'mkd']
+#[[plugins]]
+#repo = 'plasticboy/vim-markdown'
+#on_ft = ['markdown', 'rst', 'mkd', 'md']
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
-on_ft = ['markdown', 'rst', 'mkd']
+on_ft = ['markdown', 'rst', 'mkd', 'md']
 depends = ['vim-markdown']
 hook_add = '''
 let g:vim_markdown_folding_disabled = 1

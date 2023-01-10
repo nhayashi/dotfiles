@@ -89,8 +89,8 @@ repo = 'jonathanfilip/vim-lucius'
 hook_add = '''
 au MyAutoCmd VimEnter * nested colorscheme lucius
 let g:lucius_style = 'dark'
-let g:lucius_contrast = 'low'
-let g:lucius_contract_bg = 'normal'
+let g:lucius_contrast = 'normal'
+let g:lucius_contrast_bg = 'normal'
 '''
 
 [[plugins]]
