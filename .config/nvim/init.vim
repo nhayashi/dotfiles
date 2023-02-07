@@ -10,6 +10,8 @@ if &compatible
   set nocompatible
 endif
 
+let g:python3_host_prog = expand('$HOME/.asdf/installs/python/3.10.9/bin/python')
+
 ""plug Scripts-----------------------------
 "
 "let s:plug_dir = expand('$HOME/.local/share/nvim/site/autoload/plug.vim')
