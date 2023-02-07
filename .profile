@@ -1,11 +1,11 @@
 # Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 
 # bash-completion
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 # Neovim
 export EDITOR=nvim
@@ -14,7 +14,7 @@ export EDITOR=nvim
 eval "$(gdircolors ~/code/src/github.com/seebi/dircolors-solarized/dircolors.256dark)"
 
 # for git diff-hgighlight PATH
-export PATH=$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
@@ -29,10 +29,20 @@ export PATH=$PATH:~/Library/Application\ Support/JetBrains/Toolbox/scripts
 export PATH=$PATH:./node_modules/.bin
 
 # rover
-source ~/.rover/env
+#source ~/.rover/env
 
 # apollo
 APOLLO_TELEMETRY_DISABLED=1
 
 # Enable gke-gcloud-auth-plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Rancher Desktop
+#export PATH=$HOME/.rd/bin:$PATH
+
+# golang
+export PATH="$PATH:$(go env GOPATH)/bin"
+
