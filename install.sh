@@ -1,12 +1,13 @@
 #!/bin/bash
 git config --global ghq.root ~/code/src
-git config --global core.excludesfile ~/.gitignore_global
 
 rm -f ~/.dotfiles && ln -s $(ghq root)/github.com/nhayashi/dotfiles ~/.dotfiles
 
-for f in .bash_aliases .bashrc .gitignore_global .ideavimrc .tig-completion.sh .tigrc .tigrc.vim .tmux.conf; do
+for f in .bash_aliases .bashrc .ideavimrc .tig-completion.sh .tigrc .tigrc.vim .tmux.conf; do
     rm -f ~/$f && ln -s ~/.dotfiles/$f ~/$f
 done
+
+rm -f ~/.config/git/ignore && ln -s ~/.dotfiles/.config/git/ignore ~/.config/git/ignore
 
 # TODO: configure nvim
 
