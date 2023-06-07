@@ -46,3 +46,5 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # golang
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+# Rust
+. "$HOME/.cargo/env"
