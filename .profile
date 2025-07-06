@@ -1,11 +1,18 @@
+# Deprecation interactive shell warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/usr/local/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # bash-completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+# mise
+#eval "$(~/.local/bin/mise activate bash)"
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+#. $(brew --prefix asdf)/libexec/asdf.sh
 
 # Neovim
 export EDITOR=nvim
@@ -14,7 +21,7 @@ export EDITOR=nvim
 eval "$(gdircolors ~/code/src/github.com/seebi/dircolors-solarized/dircolors.256dark)"
 
 # for git diff-hgighlight PATH
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+export PATH=$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
@@ -48,3 +55,6 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Rust
 . "$HOME/.cargo/env"
+
+# mysql
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
