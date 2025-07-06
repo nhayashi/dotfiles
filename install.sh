@@ -1,12 +1,11 @@
 #!/bin/bash
-git config --global ghq.root ~/code/src
-
 rm -f ~/.dotfiles && ln -s $(ghq root)/github.com/nhayashi/dotfiles ~/.dotfiles
 
 for f in .bash_aliases .bash_profile .bashrc .ideavimrc .profile .tmux.conf; do
     rm -f ~/$f && ln -s ~/.dotfiles/$f ~/$f
 done
 
+rm -f ~/.config/git/config && ln -s ~/.dotfiles/.config/git/config ~/.config/git/config
 rm -f ~/.config/git/ignore && ln -s ~/.dotfiles/.config/git/ignore ~/.config/git/ignore
 
 # TODO: configure nvim
