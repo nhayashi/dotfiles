@@ -3,7 +3,7 @@ git config --global ghq.root ~/code/src
 
 rm -f ~/.dotfiles && ln -s $(ghq root)/github.com/nhayashi/dotfiles ~/.dotfiles
 
-for f in .bash_aliases .bash_profile .bashrc .ideavimrc .profile .tig-completion.sh .tigrc .tigrc.vim .tmux.conf; do
+for f in .bash_aliases .bash_profile .bashrc .ideavimrc .profile .tmux.conf; do
     rm -f ~/$f && ln -s ~/.dotfiles/$f ~/$f
 done
 
