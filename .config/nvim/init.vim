@@ -10,7 +10,7 @@ if &compatible
   set nocompatible
 endif
 
-let g:python3_host_prog = expand('$HOME/.asdf/installs/python/3.10.9/bin/python')
+let g:python3_host_prog = expand('$HOME/.asdf/installs/python/3.12.7/bin/python')
 
 ""plug Scripts-----------------------------
 "
@@ -135,7 +135,7 @@ set showcmd
 " 対応する括弧の行き来する時間の設定
 set matchtime=3
 " vimを開いた位置ではなくファイルのディレクトリ位置を起点にする
-set browsedir=buffer
+"set browsedir=buffer
 " 文字にアンチエイリアスをかける
 if has('mac') && has('gui_running')
   set antialias
@@ -302,7 +302,7 @@ set cindent      " Cプログラムファイルの自動インデントを始め
 " softtabstopはTabキー押し下げ時の挿入される空白の量，0の��合はtabstopと同じ，BSにも影響する
 set tabstop=2 shiftwidth=2 softtabstop=0
 " ペースト時にインデントoffにするためのキー設定
-set pastetoggle=<C-E>
+"set pastetoggle=<C-E>
 
 " ファイルタイプの検索を有効にする
 filetype plugin on
